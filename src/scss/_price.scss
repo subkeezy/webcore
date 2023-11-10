@@ -1,0 +1,214 @@
+/*****price*****/
+
+/*****width: 320px*****/
+.price-heading-slide {
+  display: none;
+}
+.price-heading {
+  display: none;
+}
+
+.price-content {
+  padding-bottom: 16px;
+}
+
+.price {
+  padding-bottom: 50px;
+  position: relative;
+  &__item {
+    position: relative;
+    display: flex;
+    row-gap: 16px;
+    flex-direction: column;
+    width: 260px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+  &__item-names {
+    display: none;
+  }
+  &__item-list {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__item-name,
+  &__item-descriprion,
+  &__repair-item-name::before,
+  &__costs-item-name::before,
+  &__term-item-name::before {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: $grey;
+  }
+  &__repair-item-name::before,
+  &__costs-item-name::before,
+  &__term-item-name::before {
+    display: block;
+    padding-bottom: 4px;
+  }
+  &__repair-item-name::before {
+    content: "Ремонтные услуги";
+  }
+  &__costs-item-name::before {
+    content: "Цена";
+  }
+  &__term-item-name::before {
+    content: "Срок";
+  }
+  &__item-descriprion {
+    color: #1B1C21;
+    line-height: 18px;
+  }
+  &__order-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+  }
+  &__swiper-pagination {
+    padding-top: 24px;
+    position: relative;
+    top: 100px;
+  }
+  &__gradient {
+    height: 200px;
+    top: 75px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      #f8f8f8 110%,
+      #f8f8f8 10%
+    );
+  }
+  &__footer {
+    padding: 0 16px;
+    row-gap: 16px;
+    width: 288px;
+  }
+  &__description {
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 16px;
+  }
+  &__offer {
+    font-weight: 500;
+    line-height: 24px;
+  }
+  &__offer span {
+    display: inline-block;
+    padding-left: 6px;
+    line-height: 24px;
+    transform: translateY(1px);
+  }
+  &__offer:hover {
+    text-decoration: underline;
+  }
+}
+
+/*****width: 768px*****/
+@media (min-width: 768px) {
+  .price-heading-slide {
+    display: block;
+  }
+  .price-heading {
+    display: grid;
+    background: transparent;
+    padding-top: 0;
+    padding-bottom: 16px;
+    &__item {
+      font-size: 14px;
+      color: $grey;
+    }
+  }
+  .price-heading::after {
+    display: none;
+  }
+  .price-content {
+    padding-bottom: 24px;
+  }
+  .price {
+    padding-bottom: 50px;
+    &__list {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    &__item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 3.3fr 1fr 1fr 1fr;
+      width: 100%;
+      height: 64px;
+      align-items: center;
+
+    }
+    &__repair-item-name::before,
+    &__costs-item-name::before,
+    &__term-item-name::before {
+      display: none;
+    }
+    &__order-btn {
+      position: static;
+      justify-self: end;
+    }
+    &__item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      margin: 0 auto;
+      min-width: 97%;
+      height: 1px;
+      background-color: #eaeaea;
+      z-index: 10;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &__last-item:last-child::after {
+      height: 0;
+    }
+    &__footer {
+      width: 450px;
+      padding: 0 24px;
+      row-gap: 16px;
+    }
+  }
+  .price-heading {
+    height: auto;
+  }
+}
+
+/*****width: 1120px*****/
+@media (min-width: 1120px) {
+  .price-content {
+    padding-bottom: 32px;
+  }
+  .price {
+    &__item::after {
+      min-width: 96%;
+    }
+    &__item {
+      padding-left: 24px;
+      padding-right: 24px;
+      grid-template-columns: 3.7fr 2fr 2fr 1fr;
+    }
+    &__footer {
+      width: 470px;
+      padding: 0 32px;
+      row-gap: 16px;
+    }
+  }
+
+}
+
+/*****width: 1440px*****/
+@media (min-width: 1440px) {
+  .price {
+    padding-left: 320px;
+    &__header {
+      width: 100%;
+    }
+  }
+}

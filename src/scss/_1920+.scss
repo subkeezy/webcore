@@ -1,0 +1,38 @@
+/** 1920+ **/
+@media (min-width: 1920px) {
+  .services__container {
+    padding: 0 45px;
+  }
+  .services__header-heading::before {
+    left: -15px;
+  }
+  .about__text {
+    font-size: 16px;
+  }
+  .services__list {
+    padding-bottom: 25px;
+  }
+  .brands__list {
+    column-gap: 20px;
+  }
+  .brands {
+    &__item {
+      width: 236px;
+    }
+  }
+  .tech {
+    &__item {
+      width: 235px;
+    }
+  }
+  .services__header-heading {
+    position: relative;
+    line-height: 43px;
+    font-size: 1.75rem;
+    padding-left: 30px;
+    z-index: -2;
+    letter-spacing: -0.6px;
+  }
+
+
+}

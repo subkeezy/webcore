@@ -1,0 +1,228 @@
+/*****mobile-menu(width: 320px)*****/
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.mobile-menu {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.mobile__wrapper {
+  opacity: 0;
+  min-width: 320px;
+  background-color: #fff;
+  top: 0;
+  left: -320px;
+  transition: left .5s ease;
+}
+.mobile__wrapper.mobile-menu--open {
+  left: 0;
+  opacity: 1;
+  position: fixed;
+  overflow-y: auto;
+  box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
+  z-index: 1000;
+}
+
+.mobile__wrapper.mobile-menu--open::-webkit-scrollbar  {
+  width: 0;
+  display: none;
+}
+
+.mobile-menu.mobile-wrapper::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
+.mobile__background {
+  position: relative;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.mobile {
+  &__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 16px;
+    padding-bottom: 32px;
+  }
+
+  &__header {
+    min-height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__side-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+  }
+  &__navigation {
+    margin-bottom: auto;
+  }
+  &__navigation-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+  }
+  &__navigation-link {
+    position: relative;
+    color: #1b1c21;
+    font-size: 1rem;
+    line-height: 24px;
+    font-weight: 500;
+  }
+  &__navigation-link::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -20px;
+    width: 8px;
+    height: 32px;
+    background-color: $blue;
+    border-radius: 4px;
+    align-self: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  &__navigation-link:hover {
+    text-decoration: underline;
+  }
+  &__navigation-link:hover::before {
+    opacity: 1;
+  }
+  &__navigation-link--active {
+    color: $grey;
+  }
+  &__navigation-link--active::before {
+    opacity: 1;
+  }
+  &__navigation-link--active:hover {
+    text-decoration: none;
+    cursor: default;
+  }
+  &__footer {
+    padding-top: 50px;
+  }
+  &__footer a:hover {
+    text-decoration: underline;
+  }
+  &__footer-buttons {
+    display: flex;
+    column-gap: 16px;
+    padding-bottom: 16px;
+  }
+  &__footer-connection {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    padding-bottom: 8px;
+  }
+  &__footer-email {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+  }
+  &__footer-phone {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+  }
+  &__footer-langs {
+    display: flex;
+    column-gap: 7px;
+  }
+  &__footer-lang-link {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+  &__footer-lang:first-of-type {
+    color: $grey;
+  }
+}
+
+/*****mobile-menu(width: 768px)*****/
+@media (min-width: 768px) {
+  .header,
+  .services {
+    display: block;
+  }
+  .services__header-menu {
+    display: none;
+  }
+  .mobile__container {
+    padding: 0 24px;
+    padding-bottom: 32px;
+  }
+  .mobile {
+    &__wrapper {
+      z-index: 1;
+    }
+    &__navigation {
+      padding-top: 24px;
+    }
+    &__navigation-list {
+      row-gap: 32px;
+    }
+    &__header {
+      justify-content: space-between;
+      column-gap: 0;
+    }
+    &__navigation-link::before {
+      left: -27px;
+    }
+  }
+}
+
+/*****mobile-menu(width: 1440px)*****/
+@media (min-width: 1440px) {
+  .mobile-menu::before {
+    display: none;
+  }
+  .mobile__wrapper {
+    box-shadow: none;
+    left: 0;
+    opacity: 1;
+    overflow-y: auto;
+    position: fixed;
+    z-index: 1000;
+    transition: none;
+  }
+  .mobile-menu {
+    z-index: 1000;
+    width: 320px;
+    min-height: 100%;
+    position: fixed;
+  }
+  .mobile {
+    &__header-cross {
+      display: none;
+    }
+    &__header {
+      min-height: 118px;
+    }
+    &__navigation {
+      padding-top: 0;
+    }
+    &__navigation-list {
+      row-gap: 28.31px;
+    }
+  }
+  .services {
+    padding-left: 320px;
+  }
+
+}

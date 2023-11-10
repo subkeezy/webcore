@@ -1,0 +1,118 @@
+/*****callback*****/
+
+/*****width: 320px*****/
+.callback {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+
+  &__wrapper {
+    opacity: 0;
+    width: 320px;
+    background-color: #fff;
+    top: 0;
+    right: -320px;
+    transition: right .5s ease;
+    height: 100vh;
+  }
+  &__wrapper--open {
+    right: 0;
+    opacity: 1;
+    position: fixed;
+    overflow-y: auto;
+    box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
+    z-index: 999;
+  }
+  &__background {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+  &__container {
+    padding: 21px 16px;
+    height: 100vh;
+  }
+  &__heading {
+    position: relative;
+    padding-bottom: 24px;
+    margin-left: -16px;
+    padding-left: 16px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+  }
+  &__heading::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -7px;
+    border-radius: 0 4px 4px 0;
+    height: 40px;
+    width: 4px;
+    background-color: $blue;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  &__button {
+    align-self: flex-end;
+  }
+  &__disclaimer {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    color: $grey;
+    width: 95%;
+  }
+  &__disclaimer a {
+    color: $pink;
+  }
+  &__disclaimer a:hover {
+    text-decoration: underline;
+  }
+  &__label--error {
+    color: red;
+    font-size: 12px;
+    padding-left: 10px;
+  }
+  &__input-box {
+    width: 100%;
+  }
+}
+
+/*****width: 1440px*****/
+@media (min-width: 1440px) {
+  .callback {
+    &__wrapper {
+      width: 513px;
+      background: transparent;
+      box-shadow: none;
+      transition: right .5s ease;
+    }
+    &__container {
+      padding: 32px;
+      max-width: 440px;
+      background-color: #fff;
+      position: absolute;
+      right: 0;
+      box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2);
+    }
+    &__heading {
+      margin-left: -32px;
+      padding-left: 32px;
+    }
+    &__close {
+      margin: 0;
+      z-index: 100;
+      position: absolute;
+      left: -69px;
+      top: 30px;
+    }
+  }
+}
